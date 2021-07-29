@@ -1,0 +1,51 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.digitalinnovationone'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '16'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.5.3'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.3'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.12.4'
+
+	implementation 'postgresql:postgresql:9.1-901-1.jdbc4'
+
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+	implementation 'io.springfox:springfox-swagger2:3.0.0'
+
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+
+	// https://mvnrepository.com/artifact/io.springfox/springfox-bean-validators
+	implementation 'io.springfox:springfox-bean-validators:3.0.0'
+
+	implementation 'com.h2database:h2:1.4.200'
+
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-envers
+	implementation group: 'org.hibernate', name: 'hibernate-envers', version: '5.5.4.Final'
+
+	// https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
+	implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.1.7.Final'
+
+}
+
+test {
+	useJUnitPlatform()
+}
